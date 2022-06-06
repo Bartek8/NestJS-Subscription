@@ -1,7 +1,7 @@
 import { Field, ObjectType } from '@nestjs/graphql';
 import { IAuthUser } from '../auth/auth-user';
 import { UserRoleEnum } from '../enum/user-role.enum';
-import { BaseDto } from '../base.dto';
+import { BaseDto } from '../dto/base.dto';
 
 @ObjectType()
 export class AuthUserObject
