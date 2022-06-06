@@ -1,0 +1,9 @@
+version: '3'
+
+services:
+  ddd_example_redis:
+    image: redis:6-alpine
+    ports:
+      - 6379:6379
+    command: redis-server --requirepass secret
+
