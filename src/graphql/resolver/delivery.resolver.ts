@@ -15,9 +15,9 @@ import { PubSub } from 'graphql-subscriptions';
 @UseGuards(GqlAuthGuard, GqlRolesGuard)
 @Resolver(() => GqlResultObject)
 export class DeliveryResolver {
-  // pubSub = new PubSub();
+  pubSub = new PubSub();
 
-  constructor(@Inject(PUB_SUB) private readonly pubSub: RedisPubSub) {}
+  // constructor(@Inject(PUB_SUB) private readonly pubSub: RedisPubSub) {}
 
   @Roles(UserRoleEnum.DRIVER)
   @Mutation(() => GqlResultObject)
