@@ -1,0 +1,35 @@
+enum UserRoleEnum {
+  DRIVER
+  ADMIN
+}
+
+input UserLoginInput {
+  email: String!
+  password: String!
+}
+
+type AuthUserObject {
+  userId: String!
+  role: UserRoleEnum!
+}
+
+type GqlResultObject {
+  result: Boolean!
+}
+
+type JwtObject {
+  accessToken: String!
+}
+
+type Query {
+    me: AuthUserObject
+}
+
+type Mutation {
+    loginUser(loginUser: UserLoginInput): JwtObject
+    pickUpDelivery: GqlResultObject
+}
+
+type Subscription {
+    deliveryPickedUp: GqlResultObject
+}
