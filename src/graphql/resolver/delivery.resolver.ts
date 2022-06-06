@@ -29,15 +29,15 @@ export class DeliveryResolver {
     return GqlResultObject.ok();
   }
 
-  // Code first approach
-  // @Subscription((returns) => GqlResultObject, {
-  //   filter: (payload, variables, context) => {
-  //     console.log(payload);
-  //     return payload;
-  //   },
-  // })
   // Schema first approach
-  @Subscription()
+  // @Subscription()
+  // Code first approach
+  @Subscription((returns) => GqlResultObject, {
+    filter: (payload, variables, context) => {
+      console.log(payload);
+      return payload;
+    },
+  })
   deliveryPickedUp(): AsyncIterator<any> {
     return this.pubSub.asyncIterator(
       DELIVERY_SUBSCRIPTION_EVENTS.deliveryPickedUp,

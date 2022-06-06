@@ -33,10 +33,10 @@ registerEnumType(UserRoleEnum, { name: 'UserRoleEnum' });
       useFactory: () => {
         return {
           // Schema first approach
-          typePaths: ['./**/*.gql'],
+          // typePaths: ['./**/*.gql'],
 
           // Code first approach
-          // autoSchemaFile: true,
+          autoSchemaFile: true,
 
           playground: false,
           plugins: [ApolloServerPluginLandingPageLocalDefault()],
